@@ -2,17 +2,24 @@
 
 ## Docker
 
+\#host: Commands from your host system  
+\#container: Commands inside the running docker container
+
 ```
 # Build the docker container
-docker rm node1
-docker build -t node1 .
+host# docker rm node1
+host# docker build -t node1 .
 
 # Start the docker container
-docker run -p 30303:30303 -p 8545:8545  --name node1 node1
+host# docker run -p 30303:30303 -p 8545:8545  --name node1 node1
 
 # Exec a new bash in the running container "node1"
-docker exec -it node1 bash
+host# docker exec -it node1 bash
 
+# Attach to the geth console 
+container# /geth attach ipc:/root/ethereum/geth.ipc
+# Or if geth is installed on the host
+host# geth attach http://:8545
 ```
 
 ## Wallets
