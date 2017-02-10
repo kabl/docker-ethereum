@@ -7,14 +7,14 @@
 
 ```
 # Build the docker container
-host# docker rm node1
-host# docker build -t node1 .
+docker rm node1
+docker build -t node1 .
 
 # Start the docker container
-host# docker run -p 30303:30303 -p 8545:8545  --name node1 node1
+docker run -p 30303:30303 -p 8545:8545  --name node1 node1
 
 # Exec a new bash in the running container "node1"
-host# docker exec -it node1 bash
+docker exec -it node1 bash
 
 # Attach to the geth console 
 container# /geth attach ipc:/root/ethereum/geth.ipc
@@ -43,3 +43,13 @@ Password:       123456789
 Private Key:    38933d2b0094c84620bd4eeb63ba5af7d2caa3cea1bb8d3d0697d93fe3298faa  
 Address:        0xFf482ac7eB8e34120e3Af2cda0dc4C3f6Ee7Cc09  
 File:           UTC--2017-02-10T18-03-43.683Z--ff482ac7eb8e34120e3af2cda0dc4c3f6ee7cc09  
+
+## Ethereum internal
+The nodekey1 file:
+
+```
+# the nodekey1
+5a75e9bd3a0503086d0ca54c51ffa8bd83f00cadc2da47f11bd0dd5a2eb77429
+# matches the node id: 
+a89fa52e70a017ba650dfb348d55baa8187746f2954c6ea2cd9196d75ee203208d8ae27010d75cee3421aa5f39112b8499499d3168bd686815c826b1e02083dd
+```
