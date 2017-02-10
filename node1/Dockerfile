@@ -1,15 +1,21 @@
 FROM ethereum/client-go
 
-ENV datadir /root/ethereum
+ENV HOST_DIR ./resources
+ENV CONTAINER_DIR /root/ethereum
 
-COPY ./resources/* /root/
+# Geth will init the directory ${CONTAINER_DIR}
+COPY ${HOST_DIR}/genesis.json /root/genesis.json
+RUN /geth --datadir=${CONTAINER_DIR} init /root/genesis.json
 
-RUN /geth --datadir=${datadir} init /root/genesis.json
+# Now copy our keystore files and the nodekey. We have to do that after geth init. Oterhwise it would be overriden 
+COPY  ${HOST_DIR}/keystore/* ${CONTAINER_DIR}/keystore/
+COPY  ${HOST_DIR}/nodekey ${CONTAINER_DIR}/nodekey
+
 
 EXPOSE 30303
 EXPOSE 8545
 
-ENTRYPOINT /geth --datadir=${datadir} \
+ENTRYPOINT /geth --datadir=${CONTAINER_DIR} \
     --verbosity 6 \
     --identity "node1" \
     --rpc \
