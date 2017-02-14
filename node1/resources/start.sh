@@ -6,7 +6,6 @@ set -e
 # First startup netstate 
 cd /root/eth-netstats
 WS_SECRET=eth-net-stats-secret npm start &
-sleep 3
 
 # Second startup link between netstate and geth
 cd /root/eth-net-intelligence-api
