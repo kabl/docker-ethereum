@@ -1,8 +1,11 @@
 # Project info
 
-
 ## Usefull Geth commands
 ```
+# docker-compose
+docker-compose build
+docker-compose up
+
 # Attaching Geth
 geth attach http://:8545
 

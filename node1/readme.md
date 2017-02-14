@@ -12,7 +12,7 @@ docker rm node1
 docker build -t node1 .
 
 # Start the docker container
-docker run -p 30303:30303 -p 8545:8545 -p 3000:3000 --name node1 node1
+docker run -p 30303:30303 -p 8545:8545 --name node1 node1
 
 # Exec a new bash in the running container "node1"
 docker exec -it node1 bash

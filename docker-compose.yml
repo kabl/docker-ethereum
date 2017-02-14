@@ -1,0 +1,30 @@
+version: '2'
+services:
+  node1:
+    build: node1
+    container_name: node1
+    hostname: node1
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8545:8545"
+#node2 is not working properly. Not connecting to node1, not connected to eth-netstats
+  node2:
+    build: node2
+    container_name: node2
+    hostname: node2
+    ports:
+      - "30304:30303"
+      - "30304:30303/udp"
+      - "8546:8545"
+    links:
+      - "node1"
+  eth-netstats:
+    build: eth-netstats
+    container_name: eth-netstats
+    hostname: eth-netstats
+    ports: 
+      - "3000:3000"
+    links:
+      - node1
+      - node2
