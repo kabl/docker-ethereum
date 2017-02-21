@@ -25,6 +25,10 @@ web3.fromWei(eth.getBalance(eth.accounts[1]), "ether")
 
 ## Node info
 admin.nodeInfo
+
+# Ethereum network state
+http://localhost:3000/
 ```
 
-http://localhost:3000/
+## Issues
+- [ ] node2 does not connect to node1. bootnodes not working in node2. IP Address required. Hostname is not working
