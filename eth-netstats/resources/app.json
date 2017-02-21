@@ -33,8 +33,8 @@
     {
       "NODE_ENV"        : "production",
       "RPC_HOST"        : "node2",
-      "RPC_PORT"        : "8546",
-      "LISTENING_PORT"  : "30304",
+      "RPC_PORT"        : "8545",
+      "LISTENING_PORT"  : "30303",
       "INSTANCE_NAME"   : "node2",
       "WS_SERVER"       : "ws://eth-netstats:3000",
       "WS_SECRET"       : "eth-net-stats-secret",
