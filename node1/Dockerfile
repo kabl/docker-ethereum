@@ -10,6 +10,8 @@ ENV CONTAINER_DIR /root/ethereum
 # ===== Install and Setup Geth ===== 
 # Geth will init the directory ${CONTAINER_DIR}
 COPY ${HOST_DIR}/genesis.json /root/genesis.json
+COPY ${HOST_DIR}/mineOnDemand.js /root/mineOnDemand.js
+
 RUN /geth --datadir=${CONTAINER_DIR} init /root/genesis.json
 
 # Now copy our keystore files and the nodekey. We have to do that after geth init. Oterhwise it would be overriden 
@@ -30,4 +32,5 @@ ENTRYPOINT /geth --datadir=/root/ethereum \
     --maxpeers 10 \
     --mine \
     --etherbase 4C51098B8f7547476F85ED24deC890f835A841C5 \
-    --minerthreads 1
+    --minerthreads 0 \
+    js /root/mineOnDemand.js
