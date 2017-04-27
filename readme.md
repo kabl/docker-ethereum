@@ -1,13 +1,15 @@
 # Project info
 
-## Usefull Geth commands
+## Docker-compose 
 ```
-# docker-compose
+# Start the Node
 docker-compose build
 docker-compose up
+```
 
-# docker
-docker ps
+## Usefull Geth commands
+```
+# Connect to the containers bash
 docker exec -it node1 bash
 
 # Geth
