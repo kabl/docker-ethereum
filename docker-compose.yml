@@ -8,7 +8,6 @@ services:
       - "30303:30303"
       - "30303:30303/udp"
       - "8545:8545"
-#node2 is not working properly. Not connecting to node1, not connected to eth-netstats
   node2:
     build: node2
     container_name: node2

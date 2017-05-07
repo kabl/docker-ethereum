@@ -8,6 +8,7 @@ ENV CONTAINER_DIR /root/ethereum
 COPY ${HOST_DIR}/genesis.json /root/genesis.json
 RUN /geth --datadir=${CONTAINER_DIR} init /root/genesis.json
 
+COPY  ${HOST_DIR}/addPeer.js /root/addPeer.js
 
 ENTRYPOINT /geth --datadir=/root/ethereum \
     --verbosity 6 \
@@ -18,4 +19,4 @@ ENTRYPOINT /geth --datadir=/root/ethereum \
     --networkid 999 \
     --nodiscover \
     --maxpeers 10 \
-    --bootnodes="enode://a89fa52e70a017ba650dfb348d55baa8187746f2954c6ea2cd9196d75ee203208d8ae27010d75cee3421aa5f39112b8499499d3168bd686815c826b1e02083dd@node1:30303"
+    js /root/addPeer.js

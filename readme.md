@@ -5,6 +5,10 @@
 # Start the Node
 docker-compose build
 docker-compose up
+
+# Start stop without rebuilding
+docker-compose stop
+docker-compose start
 ```
 
 ## Usefull Geth commands

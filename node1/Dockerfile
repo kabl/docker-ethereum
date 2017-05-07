@@ -32,5 +32,5 @@ ENTRYPOINT /geth --datadir=/root/ethereum \
     --maxpeers 10 \
     --mine \
     --etherbase 4C51098B8f7547476F85ED24deC890f835A841C5 \
-    --minerthreads 0 \
     js /root/mineOnDemand.js
+    #--minerthreads 1 
