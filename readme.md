@@ -37,4 +37,16 @@ http://localhost:3000/
 ```
 
 ## Issues
-- [ ] node2 does not connect to node1. bootnodes not working in node2. IP Address required. Hostname is not working
+If the node2 shouldn't connect the configured IP address in the "/node2/addPeer.js". The IP address of Node can be determined with:
+ ```bash
+# Ccheck if the peer node1 is connected
+docker exec -it node2 bash
+/geth attach ipc:/root/ethereum/geth.ipc
+admin.peers # if this command returns an empty list then node2 is not connected to node1. I
+exit. 
+```
+ ```bash
+# Determine the IP of node1
+docker exec -it node2 bash
+getent hosts node1 | awk '{ print $1 }'
+```
