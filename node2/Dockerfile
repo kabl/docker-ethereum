@@ -15,8 +15,9 @@ ENTRYPOINT /geth --datadir=/root/ethereum \
     --identity "node2" \
     --rpc \
     --rpcaddr "0.0.0.0" \
-    --rpcapi "admin,eth,net,personal,web3" \
+    --rpcapi "admin,eth,net,personal,web3,debug" \
     --networkid 999 \
     --nodiscover \
     --maxpeers 10 \
+    --rpccorsdomain "*" \
     js /root/addPeer.js

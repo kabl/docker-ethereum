@@ -26,11 +26,12 @@ ENTRYPOINT /geth --datadir=/root/ethereum \
     --nodekey /root/nodekey1 \
     --rpc \
     --rpcaddr "0.0.0.0" \
-    --rpcapi "admin,eth,net,personal,web3" \
+    --rpcapi "admin,eth,net,personal,web3,debug" \
     --networkid 999 \
     --nodiscover \
     --maxpeers 10 \
     --mine \
+    --rpccorsdomain "*" \
     --etherbase 4C51098B8f7547476F85ED24deC890f835A841C5 \
     js /root/mineOnDemand.js
     #--minerthreads 1 
