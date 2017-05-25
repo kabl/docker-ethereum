@@ -4,6 +4,9 @@ services:
     build: node1
     container_name: node1
     hostname: node1
+    networks:
+      eth_net:
+        ipv4_address: 172.100.0.2
     ports:
       - "30303:30303"
       - "30303:30303/udp"
@@ -12,6 +15,9 @@ services:
     build: node2
     container_name: node2
     hostname: node2
+    networks:
+      eth_net:
+        ipv4_address: 172.100.0.3
     ports:
       - "30304:30303"
       - "30304:30303/udp"
@@ -22,8 +28,17 @@ services:
     build: eth-netstats
     container_name: eth-netstats
     hostname: eth-netstats
+    networks:
+      eth_net:
+        ipv4_address: 172.100.0.10
     ports: 
       - "3000:3000"
     links:
       - node1
       - node2
+networks:
+  eth_net:
+    ipam:
+      config:
+        - subnet: 172.100.0.0/16
+         # ip_range: 172.18.0.0/16
