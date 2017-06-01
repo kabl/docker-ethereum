@@ -1,6 +1,6 @@
 [
   {
-    "name"              : "node1-app",
+    "name"              : "node2-app",
     "script"            : "app.js",
     "log_date_format"   : "YYYY-MM-DD HH:mm Z",
     "merge_logs"        : false,
@@ -11,10 +11,10 @@
     "env":
     {
       "NODE_ENV"        : "production",
-      "RPC_HOST"        : "node1",
+      "RPC_HOST"        : "node2",
       "RPC_PORT"        : "8545",
       "LISTENING_PORT"  : "30303",
-      "INSTANCE_NAME"   : "node1",
+      "INSTANCE_NAME"   : "node2",
       "WS_SERVER"       : "ws://eth-netstats:3000",
       "WS_SECRET"       : "eth-net-stats-secret",
       "VERBOSITY"       : 2
