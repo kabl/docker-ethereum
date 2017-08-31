@@ -1,7 +1,7 @@
 version: '2'
 services:
   node1:
-    build: node1
+    build: ./node1
     container_name: node1
     hostname: node1
     networks:
@@ -12,7 +12,7 @@ services:
       - "30303:30303/udp"
       - "8545:8545"
   node2:
-    build: node2
+    build: ./node2
     container_name: node2
     hostname: node2
     networks:
