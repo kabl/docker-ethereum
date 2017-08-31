@@ -3,7 +3,7 @@
 ## Docker
 
 
-```
+```bash
 # Build the docker container
 docker rm eth-netstates
 docker build -t eth-netstates .

@@ -6,8 +6,8 @@ This is the Node 1 one. The "main" node.
 \#host: Commands from your host system  
 \#container: Commands inside the running docker container
 
-```
-# Build the docker container
+```bash
+# Clean up and Build the docker container
 docker rm node1
 docker build -t node1 .
 

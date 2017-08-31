@@ -7,7 +7,7 @@ cd /root/eth-net-intelligence-api
 pm2 start ./app.json
 
 # startup Geth
-/geth --datadir=/root/ethereum \
+geth --datadir=/root/ethereum \
     --verbosity 6 \
     --identity "node2" \
     --rpc \

@@ -1,11 +1,17 @@
 {
+  "config": {
+    "chainId": 170831,
+    "homesteadBlock": 0,
+    "eip155Block": 0,
+    "eip158Block": 0
+  },
   "nonce": "0x0000000000000042",
   "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "difficulty": "0x0400",
   "coinbase": "0x3333333333333333333333333333333333333333",
   "timestamp": "0x00",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "extraData": "KABL genesis Block",
+  "extraData": "0x6b61626c",
   "gasLimit": "0x8000000",
   "alloc": {
     "0x4C51098B8f7547476F85ED24deC890f835A841C5": {
