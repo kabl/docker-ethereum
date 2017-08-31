@@ -13,8 +13,8 @@ docker-compose start
 
 ## Usefull Geth commands
 ```bash
-# Connect to the containers bash
-docker exec -it node1 bash
+# Connect to the containers shell
+docker exec -it node1 sh
 
 # Geth
 geth attach http://:8545
@@ -40,7 +40,7 @@ http://localhost:3000/
 If the node2 shouldn't connect the configured IP address in the "/node2/addPeer.js". The IP address of Node can be determined with:
  ```bash
 # Ccheck if the peer node1 is connected
-docker exec -it node2 bash
+docker exec -it node2 sh
 geth attach ipc:/root/ethereum/geth.ipc
 admin.peers # if this command returns an empty list then node2 is not connected to node1. I
 exit. 
@@ -48,6 +48,6 @@ exit.
 
 ```bash
 # Determine the IP of node1
-docker exec -it node2 bash
+docker exec -it node2 sh
 getent hosts node1 | awk '{ print $1 }'
 ```

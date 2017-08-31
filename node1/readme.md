@@ -16,8 +16,8 @@ docker build --pull --tag node1:20170831 .
 # First time start will generate the DAG. This may use few minutes.
 docker run -p 30303:30303 -p 8545:8545 --name node1 node1:20170831
 
-# Exec a new bash in the running container "node1"
-docker exec -it node1 bash
+# Exec a new shell in the running container "node1"
+docker exec -it node1 sh
 
 # Attach to the geth console (run the command inside the container)
 geth attach ipc:/root/ethereum/geth.ipc
@@ -35,7 +35,7 @@ eth.blockNumber
 web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
 personal.unlockAccount(eth.accounts[0], "123456789", 100000)
 
-# Send 1 Ether from account 0 to account 1. 
+// Send 1 Ether from account 0 to account 1. 
 web3.fromWei(eth.getBalance(eth.accounts[1]), "ether")
 eth.sendTransaction({from:eth.accounts[0], to:eth.accounts[1], value: web3.toWei(1, "ether")})
 web3.fromWei(eth.getBalance(eth.accounts[1]), "ether")

@@ -9,8 +9,6 @@ RUN apk update
 RUN apk add curl
 RUN apk add git
 RUN apk add bash bash-doc bash-completion
-
-#RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apk add nodejs
 
 RUN cd /root &&\
