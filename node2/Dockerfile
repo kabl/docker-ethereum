@@ -1,5 +1,5 @@
 # Use a fixed version. Sometimes latest is not anymore compatible with the genesis.json. https://hub.docker.com/r/ethereum/client-go/tags/
-FROM ethereum/client-go:v1.6.7
+FROM ethereum/client-go:v1.7.3
 
 ENV HOST_DIR ./resources
 ENV CONTAINER_DIR /root/ethereum
@@ -9,13 +9,13 @@ RUN apk update
 RUN apk add curl
 RUN apk add git
 RUN apk add bash bash-doc bash-completion
-RUN apk add nodejs
+RUN apk add nodejs nodejs-npm
 
 RUN cd /root &&\
     git clone https://github.com/cubedro/eth-net-intelligence-api &&\
     cd eth-net-intelligence-api &&\
-    npm install &&\
-    npm install -g pm2
+    /usr/bin/npm install &&\
+    /usr/bin/npm install -g pm2
 
 COPY ${HOST_DIR}/app.json /root/eth-net-intelligence-api/app.json
 COPY ${HOST_DIR}/start.sh /root/start.sh

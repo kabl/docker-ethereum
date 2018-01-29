@@ -1,4 +1,4 @@
-FROM node:7
+FROM node:9.4.0
 
 ENV HOST_DIR ./resources
 ENV CONTAINER_DIR /root/ethereum

@@ -1,5 +1,5 @@
 # Use a fixed version. Sometimes latest is not anymore compatible with the genesis.json. https://hub.docker.com/r/ethereum/client-go/tags/
-FROM ethereum/client-go:v1.6.7
+FROM ethereum/client-go:v1.7.3
 
 ENV HOST_DIR ./resources
 ENV CONTAINER_DIR /root/ethereum
