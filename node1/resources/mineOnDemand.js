@@ -1,3 +1,9 @@
+web3.personal.unlockAccount(eth.accounts[0], "123456789", 100000000)
+web3.personal.unlockAccount(eth.accounts[1], "123456789", 100000000)
+web3.personal.unlockAccount(eth.accounts[2], "123456789", 100000000)
+web3.personal.unlockAccount(eth.accounts[3], "123456789", 100000000)
+web3.personal.unlockAccount(eth.accounts[4], "123456789", 100000000)
+
 miner.start(2);
 admin.sleepBlocks(10);
 miner.stop();
